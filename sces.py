@@ -53,12 +53,13 @@ def atualizarEstoque():
     travarMenu()
 
 def estoqueMinimo():
+    print("Alerta!!! ⚠️")
+    print("Os seguintes produtos estão com menos do que 5 unidades: ")
     for i in range(len(estoque)):
         if estoque[i][2] < 5:
-            print("Alerta!!!")
-            print("Os seguintes produtos estão com menos do que 5 unidades: ")
+            
             print(estoque[i])
-            print("Necessidade de reposição! 🚛")
+    print("Necessidade de reposição! 🚛")
     travarMenu()
 
 def excluirProduto():
