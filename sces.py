@@ -44,7 +44,14 @@ def atualizarEstoque():
         novaQuantidade = int(input(f"Qual a nova quantidade do produto?: "))
         estoque[linhaProcurada][2] = novaQuantidade
         print("Nova quantidade atualizada com sucesso! ♻️")
-        print(f"{estoque[linhaProcurada]}")
+
+def estoqueMinimo():
+    for i in range(len(estoque)):
+        if estoque[i][2] < 5:
+            print("Alerta!!!")
+            print("Os seguintes produtos estão com menos do que 5 unidades: ")
+            print(estoque[i])
+            print("Necessidade de reposição! 🚛")
 
 def excluirProduto():
     buscarId = int(input("Qual o ID do produto que será excluído?: "))
@@ -68,7 +75,7 @@ def excluirProduto():
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
 print("\nBem vindo ao menu interativo. Por favor selecione uma opção: ")
 while True:
-    print("\n1- Adicionar produto | 2- Listar todos os produtos | 3- Buscar Produto por ID | 4- Atualizar estoque | 5 - Excluir produto | 6 - Sair")
+    print("\n1- Adicionar produto | 2- Listar todos os produtos | 3- Buscar Produto por ID | 4- Atualizar estoque | 5 - Estoque mínimo | 6- Excluir produto | 7 - Sair")
     opçao = input("Escolha: ")
     print("\n")
     if (opçao == "1"):
@@ -80,8 +87,10 @@ while True:
     elif(opçao == "4"):
         atualizarEstoque()
     elif(opçao == "5"):
-        excluirProduto()
+        estoqueMinimo()
     elif(opçao == "6"):
+        excluirProduto()
+    elif(opçao == "7"):
         print("Menu encerrado!")
         break
     else:
