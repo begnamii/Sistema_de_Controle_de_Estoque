@@ -1,4 +1,4 @@
-# Ajudei algumas pessoas. Não passei meu código, mas ajudei a fazer.
+# Ajudei algumas pessoas a fazer, algumas delas são: Murilo, Miguel, Gustavo Dias, Gustavo Terassi, Vithor Armando, João Pitanguy. OBS: Não passei meu código.
 estoque = [
     [1, "Celular", 3, "Prateleira A"],
     [2, "Carregador", 14, "Prateleira A"],
@@ -63,7 +63,7 @@ def excluirProduto():
         print("Produto não encontrado!")
     else:
         print(f"{estoque[linhaProcurada]}")
-        excluir = input("Você deseja excluir esse produto? (s/n): ")
+        excluir = input("Você deseja excluir esse produto? (s/n): ").lower()
         if excluir == "s":
             estoque.pop(linhaProcurada)
             print("Produto excluído com sucesso! 🗑️")
