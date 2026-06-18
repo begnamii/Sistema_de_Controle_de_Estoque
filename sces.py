@@ -6,6 +6,9 @@ estoque = [
 ]
 proximoId = 4
     
+def travarMenu():
+    input("\nPressione <ENTER> para continuar...")
+
 def adicionarProduto():
     global proximoId, novoProduto, quantidadeEstoque, localizacaoProduto
     novoProduto = input("Qual o novo produto?: ")
@@ -14,11 +17,13 @@ def adicionarProduto():
     estoque.append([proximoId, novoProduto, quantidadeEstoque, localizacaoProduto])
     proximoId += 1
     print("\nProduto adicionado com sucesso! 📦\n")
+    travarMenu()
 
 def listarProdutos():
     print("Os produtos diponíveis no estoque são: ")
     for lista in estoque:
         print(lista)
+    travarMenu()
 
 def buscarProduto():
     buscarId = int(input("Qual o ID do produto?: "))
@@ -30,6 +35,7 @@ def buscarProduto():
         print("Produto não encontrado!")
     else:
         print(f"Produto encontrado!\nDados do produto: {estoque[linhaProcurada]}")
+    travarMenu()
 
 def atualizarEstoque():
     buscarId = int(input("Qual o ID do produto que será atualizado?: "))
@@ -44,6 +50,7 @@ def atualizarEstoque():
         novaQuantidade = int(input(f"Qual a nova quantidade do produto?: "))
         estoque[linhaProcurada][2] = novaQuantidade
         print("Nova quantidade atualizada com sucesso! ♻️")
+    travarMenu()
 
 def estoqueMinimo():
     for i in range(len(estoque)):
@@ -52,6 +59,7 @@ def estoqueMinimo():
             print("Os seguintes produtos estão com menos do que 5 unidades: ")
             print(estoque[i])
             print("Necessidade de reposição! 🚛")
+    travarMenu()
 
 def excluirProduto():
     buscarId = int(input("Qual o ID do produto que será excluído?: "))
@@ -71,6 +79,7 @@ def excluirProduto():
             print("Exclusão cancelada!")
         else:
             print("Esse caractere não corresponde a nenhuma das opções, produto não excluído.")
+    travarMenu()
 
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
 print("\nBem vindo ao menu interativo. Por favor selecione uma opção: ")
