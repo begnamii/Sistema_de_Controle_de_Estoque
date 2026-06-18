@@ -7,9 +7,9 @@ def adicionarProduto():
     global proximoId, novoProduto, quantidadeEstoque, localizacaoProduto
     novoProduto = input("Qual o novo produto?: ")
     quantidadeEstoque = int(input("Qual a quantidade desse produto no estoque?: "))
-    localizacaoProduto = 1
+    localizacaoProduto = input("Qual a localização do produto?: ")
     estoque.append([proximoId, novoProduto, quantidadeEstoque, localizacaoProduto])
-    proximoId = proximoId + 1
+    proximoId += 1
     print("\nProduto adicionado com sucesso! 📦\n")
 
 def listarProdutos():
