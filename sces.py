@@ -26,9 +26,24 @@ def buscarProduto():
         if estoque[i][0] == buscarId:
             linhaProcurada = i
     if (linhaProcurada == -1):
-        print("Produto não encontrado")
+        print("Produto não encontrado!")
     else:
         print(f"Produto encontrado!\nDados do produto: {estoque[linhaProcurada]}")
+
+def atualizarEstoque():
+    buscarId = int(input("Qual o ID do produto que será atualizado?: "))
+    linhaProcurada = -1
+    for i in range(len(estoque)):
+        if estoque[i][0] == buscarId:
+            linhaProcurada = i
+    if (linhaProcurada == -1):
+        print("Produto não encontrado!")
+    else:
+        print(f"{estoque[linhaProcurada]}")
+        novaQuantidade = int(input(f"Qual a nova quantidade do produto?: "))
+        estoque[linhaProcurada][2] = novaQuantidade
+        print("Nova quantidade atualizada com sucesso! ♻️")
+        print(f"{estoque[linhaProcurada]}")
 
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
 print("\nBem vindo ao menu de opções. Por favor selecione uma opção: ")
@@ -41,8 +56,8 @@ while True:
         listarProdutos()
     elif(opçao == "3"):
         buscarProduto()
-    # elif(opçao == "4"):
-    #     atualizarEstoque()
+    elif(opçao == "4"):
+        atualizarEstoque()
     elif(opçao == "5"):
         print("Menu encerrado!")
         break
