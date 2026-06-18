@@ -1,3 +1,4 @@
+# Ajudei algumas pessoas. Não passei meu código, mas ajudei a fazer.
 estoque = [
     [1, "Celular", 3, "Prateleira A"],
     [2, "Carregador", 14, "Prateleira A"],
@@ -17,7 +18,7 @@ def adicionarProduto():
 def listarProdutos():
     print("Os produtos diponíveis no estoque são: ")
     for lista in estoque:
-        print(f"{lista}")
+        print(lista)
 
 def buscarProduto():
     buscarId = int(input("Qual o ID do produto?: "))
@@ -46,10 +47,11 @@ def atualizarEstoque():
         print(f"{estoque[linhaProcurada]}")
 
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
-print("\nBem vindo ao menu de opções. Por favor selecione uma opção: ")
+print("\nBem vindo ao menu interativo. Por favor selecione uma opção: ")
 while True:
     print("\n1- Adicionar produto | 2- Listar todos os produtos | 3- Buscar Produto por ID | 4- Atualizar estoque | 5- Sair")
     opçao = input("Escolha: ")
+    print("\n")
     if (opçao == "1"):
         adicionarProduto()
     elif (opçao == "2"):
@@ -61,5 +63,5 @@ while True:
     elif(opçao == "5"):
         print("Menu encerrado!")
         break
-    # else:
-    #     print("Esse caractere não corresponde a nenhuma das opções, tente novamente.")
+    else:
+        print("Esse caractere não corresponde a nenhuma das opções, tente novamente.")
