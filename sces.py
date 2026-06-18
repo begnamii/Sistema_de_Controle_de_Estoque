@@ -1,5 +1,7 @@
 estoque = [
-    [],
+    [1, "Celular", 3, "Prateleira A"],
+    [2, "Carregador", 14, "Prateleira A"],
+    [3, "Fone", 7, "Prateleira B"],
 ]
 proximoId = 1
     
@@ -13,8 +15,18 @@ def adicionarProduto():
     print("\nProduto adicionado com sucesso! 📦\n")
 
 def listarProdutos():
+    print("Os produtos diponíveis no estoque são: ")
     for lista in estoque:
-        print(f"Os produtos diponíveis são: {lista}")
+        print(f"{lista}")
+
+def buscarProduto():
+    global buscarId, localizacaoProduto
+    buscarId = int(input("Qual o ID do produto?: "))
+    for linha in range(len(estoque)):
+        if estoque[linha][0] == buscarId:
+            print(f"O produto está na seguinte localização: {localizacaoProduto[linha]}")
+        elif estoque[linha][0] != buscarId:
+            print("Nenhum produto encontrado com esse ID")
 
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
 print("\nBem vindo ao menu de opções. Por favor selecione uma opção: ")
@@ -25,8 +37,8 @@ while True:
         adicionarProduto()
     elif (opçao == "2"):
         listarProdutos()
-    # elif(opçao == "3"):
-    #     buscarProduto()
+    elif(opçao == "3"):
+        buscarProduto()
     # elif(opçao == "4"):
     #     atualizarEstoque()
     elif(opçao == "5"):
