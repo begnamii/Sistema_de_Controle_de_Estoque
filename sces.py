@@ -1,14 +1,19 @@
-produtos = [
+estoque = [
     [],
 ]
-
+proximoId = 1
+    
 def adicionarProduto():
-    novoProduto = input("Adicione os dados do novo produto (ex: ): ")
-    produtos.append(novoProduto)
-    print("Produto adicionado com sucesso! 📦")
+    global proximoId, novoProduto, quantidadeEstoque, localizacaoProduto
+    novoProduto = input("Qual o novo produto?: ")
+    quantidadeEstoque = int(input("Qual a quantidade desse produto no estoque?: "))
+    localizacaoProduto = 1
+    estoque.append([proximoId, novoProduto, quantidadeEstoque, localizacaoProduto])
+    proximoId = proximoId + 1
+    print("\nProduto adicionado com sucesso! 📦\n")
 
 def listarProdutos():
-    for lista in produtos:
+    for lista in estoque:
         print(f"Os produtos diponíveis são: {lista}")
 
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
@@ -24,8 +29,8 @@ while True:
     #     buscarProduto()
     # elif(opçao == "4"):
     #     atualizarEstoque()
-    # elif(opçao == "5"):
-    #     print("Menu encerrado!")
-    #     break
+    elif(opçao == "5"):
+        print("Menu encerrado!")
+        break
     # else:
     #     print("Esse caractere não corresponde a nenhuma das opções, tente novamente.")
