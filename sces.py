@@ -75,7 +75,7 @@ def excluirProduto():
 print("\nSistema de Controle de Estoque Simplificado (SCES)")
 print("\nBem vindo ao menu interativo. Por favor selecione uma opção: ")
 while True:
-    print("\n1- Adicionar produto | 2- Listar todos os produtos | 3- Buscar Produto por ID | 4- Atualizar estoque | 5 - Estoque mínimo | 6- Excluir produto | 7 - Sair")
+    print("\n1- Adicionar produto | 2- Listar todos os produtos | 3- Buscar produto por ID | 4- Atualizar estoque | 5 - Estoque mínimo | 6- Excluir produto | 7 - Sair")
     opçao = input("Escolha: ")
     print("\n")
     if (opçao == "1"):
@@ -91,7 +91,7 @@ while True:
     elif(opçao == "6"):
         excluirProduto()
     elif(opçao == "7"):
-        print("Menu encerrado!")
+        print("Menu encerrado! ❌")
         break
     else:
         print("Esse caractere não corresponde a nenhuma das opções, tente novamente.")
